@@ -5,3 +5,6 @@
   %h3= @post.author
 
   .content= from_markdown @post.content
+
+  %footer
+    = link_to 'Back to Posts', posts_path, class: 'btn'

@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $.activate_links = ->
+    $('a').each ->
+      console.log $(location).attr('href')
+      console.log $(@).attr('href')
+      $(@).addClass 'active' if $(@).attr('href') == $(location).attr('pathname')
+
+  $.activate_links()

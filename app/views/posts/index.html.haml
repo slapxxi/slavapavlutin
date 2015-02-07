@@ -1,9 +1,18 @@
 - content_for :title, 'Posts'
 
-%h2 Recent Posts
+.Posts
+  %header
+    = link_to '+ New Post', new_post_path, class: 'btn'
+    %div
+      Filters:
 
-%ul
-  - @posts.each do |post|
-    %li.post-preview= post.title
+  %h2 All Posts
+  %ul
+    - @posts.each do |post|
+      %li
+        %h2= link_to post.title, post_path(post)
+        %div= post.author
+        %time= post.created_at
+        %p= post.preview
+        %footer= link_to 'Keep Reading', post_path(post), class: 'btn'
 
-= link_to 'New Post', new_post_path

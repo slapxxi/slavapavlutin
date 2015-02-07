@@ -1,0 +1,29 @@
+// colors
+
+$black: #111;
+$white: #fff;
+
+$red: #ed1c24;
+$red-dark: #cd1c24;
+
+$grey: #bbb;
+$grey-light: #eee;
+$grey-dark: #333;
+
+@mixin container {
+  padding: 1px 10%;
+}
+
+@mixin clearing {
+  &:after {
+    content: '.';
+    width: 0;
+    clear: both;
+  }
+}
+
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

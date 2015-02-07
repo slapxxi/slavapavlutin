@@ -1,0 +1,69 @@
+.Header {
+  @include container;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  border-bottom: 2px solid $red;
+  color: $grey-dark;
+
+  nav {
+    ul {
+      float: right;
+      @include reset-list;
+    }
+
+    li {
+      float: left;
+      a {
+        display: block;
+        padding: 2em 1em;
+        transition: all .3s;
+        &:hover, &.active {
+          background-color: $red;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .logo {
+    float: left;
+    padding: 1em 0;
+    img {
+      width: 3em;
+      vertical-align: middle;
+    }
+  }
+
+
+  a {
+    color: $grey-dark;
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.Footer {
+  @include container;
+  background-color: $white;
+}
+
+.Content {
+  @include container;
+  background-color: $white;
+  font-size: 2em;
+  img {
+    width: 300px;
+  }
+}
+
+.Posts {
+  ul {
+    @include reset-list;
+  }
+}
