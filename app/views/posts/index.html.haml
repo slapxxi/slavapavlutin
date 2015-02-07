@@ -2,4 +2,8 @@
 
 %h2 Recent Posts
 
+%ul
+  - @posts.each do |post|
+    %li.post-preview= post.title
+
 = link_to 'New Post', new_post_path
