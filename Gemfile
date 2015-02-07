@@ -32,11 +32,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml-rails'
 
+# Use slugs instead of ids in URLs
+gem 'friendly_id'
+
+# Parse Markdown
+gem 'redcarpet'
+
 group :test do
   gem 'capybara'
 end
 
 group :development do
+  gem 'pry-rails'
+
   gem 'html2haml', require: false
 
   gem 'guard-rspec', require: false

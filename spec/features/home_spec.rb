@@ -9,7 +9,7 @@ RSpec.feature "Home", type: :feature do
   end
 
   scenario "return to a home page" do
-    visit blog_path
+    visit posts_path
     click_link 'Home'
     expect(page.current_url).to eq root_url
   end
