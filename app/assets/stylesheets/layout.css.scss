@@ -30,6 +30,7 @@
     }
   }
 
+
   .logo {
     float: left;
     padding: 1em 0;
@@ -50,20 +51,89 @@
 
 .Footer {
   @include container;
-  background-color: $white;
+  clear: both;
+  color: $white;
+
+  h1, h2, h3, h4, h5, h6, a {
+    color: $white;
+  }
+
+  small {
+    display: block;
+    text-align: center;
+  }
 }
 
 .Content {
   @include container;
   background-color: $white;
-  font-size: 2em;
+  padding-bottom: 3em;
+  font-size: 1.8em;
   img {
     width: 300px;
   }
 }
 
 .Posts {
+  h2 {
+    float: left;
+    padding-left: 0.5em;
+    margin-left: -0.7em;
+    border-left: 0.2em solid $black;
+  }
+
   ul {
     @include reset-list;
+  }
+}
+
+.Nav {
+  @include container;
+  text-align: right;
+  font-size: 1.1em;
+
+  a, .fa {
+    color: $white;
+  }
+}
+
+.PostPreview {
+  clear: both;
+
+  h3 {
+    margin: 2em 0 0.3em;
+  }
+
+  .meta {
+    font-size: 0.6em;
+    color: $grey;
+  }
+
+  img {
+    float: right;
+    margin-top: 1em;
+  }
+  p {
+    font-size: 0.9em;
+  }
+}
+
+.Post {
+  header {
+    h2 {
+      margin: 1em 0 0.4em;
+    }
+
+    .meta {
+      font-size: 0.8em;
+      color: $grey;
+    }
+
+    a {
+      color: $grey-dark;
+      &:hover {
+        color: $red;
+      }
+    }
   }
 }

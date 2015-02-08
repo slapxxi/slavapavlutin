@@ -1,18 +1,20 @@
 - content_for :title, 'Posts'
 
-.Posts
-  %header
-    = link_to '+ New Post', new_post_path, class: 'btn'
-    %div
-      Filters:
+- content_for :nav do
+  = link_to fa_icon('plus-circle', text: 'New Post'), new_post_path
 
+.Posts
   %h2 All Posts
   %ul
-    - @posts.each do |post|
-      %li
-        %h2= link_to post.title, post_path(post)
-        %div= post.author
-        %time= post.created_at
+    - @posts.reverse.each do |post|
+      %li.PostPreview
+        %header
+          = image_tag 'laptop.svg'
+          %h3= link_to post.title, post_path(post)
+          .meta
+            by
+            = post.author
+            %time= post.created_at.strftime "%d %B %Y"
         %p= post.preview
         %footer= link_to 'Keep Reading', post_path(post), class: 'btn'
 

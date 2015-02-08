@@ -1,5 +1,11 @@
 = content_for :title, 'New Post'
 
+- content_for :nav do
+  %ul.breadcrumbs
+    %li= link_to fa_icon('home'), root_path
+    %li= link_to fa_icon('angle-right', text: 'Posts'), posts_path
+    %li= link_to fa_icon('angle-right', text: 'New Post'), new_post_path
+
 %h2 New Post
 
 = form_for @post do |f|

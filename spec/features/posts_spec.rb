@@ -41,7 +41,8 @@ Markdown
     post = FactoryGirl.create :post, content: markdown_content
     visit post_path(post)
 
-    content = page.find('.post .content')
+    content = page.find('.Post .content')
+
     expect(content.find('h1')).to have_content 'Hello World'
     expect(content.find('p')).to have_content 'This is a paragraph.'
     expect(content.find('h2')).to have_content 'This is a header'

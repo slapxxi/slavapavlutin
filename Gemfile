@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml-rails'
 
+# Awesome iconic font & helpers
+gem 'font-awesome-rails'
+
 # Use slugs instead of ids in URLs
 gem 'friendly_id'
 

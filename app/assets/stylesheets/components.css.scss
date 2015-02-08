@@ -1,16 +1,21 @@
 .btn {
-  display: inline-block;
-  padding: .5em 1em;
-  border: 2px solid $grey-dark;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  color: $grey-dark;
-  background-color: transparent;
+  @include button($grey-dark, $red);
+}
 
-  &:hover {
-    border-color: $red-dark;
-    color: $red-dark;
+.breadcrumbs {
+  @include reset-list;
+  overflow: hidden;
+
+  li {
+    float: left;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-right: 1em;
+
+    &:after {
+    }
+
+    &:last-child:after {
+    }
   }
 }

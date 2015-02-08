@@ -18,7 +18,10 @@
         %ul
           %li= link_to 'Home', root_path
           %li= link_to 'Posts', posts_path
-          %li= link_to 'Menu', '#'
+          %li= link_to fa_icon('navicon', spinner: true), '#'
+
+
+    %aside.Nav= content_for :nav
 
     .Content
       = yield
@@ -27,6 +30,6 @@
       %h3 Find Me On
       %nav
         %ul
-          %li= link_to 'Twitter', '#'
-          %li= link_to 'Github', '#'
+          %li= link_to fa_icon('twitter', text: 'Twitter'), '#'
+          %li= link_to fa_icon('github', text: 'Github'), '#'
       %small All rights reserved. 2015. Slava Pavlutin

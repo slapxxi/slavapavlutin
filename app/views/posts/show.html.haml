@@ -1,8 +1,20 @@
 - content_for :title, @post.title
+- content_for :nav do
+  %ul.breadcrumbs
+    %li= link_to 'Home', root_path
+    %li= fa_icon 'angle-right'
+    %li= link_to 'Posts', posts_path
+    %li= fa_icon 'angle-right'
+    %li= link_to @post.title, '#'
 
-.post
-  %h2.title= @post.title
-  %h3= @post.author
+.Post
+  %header
+    %h2.title= @post.title
+    .meta
+      by
+      =link_to @post.author
+      on
+      %time= @post.created_at.strftime "%d %B %Y"
 
   .content= from_markdown @post.content
 
