@@ -1,5 +1,5 @@
 body {
-  font-family: "Myriad Pro", sans-serif;
+  font-family: $base-font;
   background-color: $red;
   color: $grey-dark;
 }
@@ -8,9 +8,13 @@ h1, h2, h3, h4, h5, h6 {
   color: $black;
 }
 
+p {
+  margin: $paragraph-spacing auto;
+}
+
 a {
-  color: $red;
   text-decoration: none;
+  color: $red;
 
   &:hover, &:active {
     color: $red-dark;
@@ -23,10 +27,21 @@ blockquote {
   color: $grey;
 }
 
+// Code
+
 code {
   display: inline-block;
-  padding: 1em;
-  border-left: 1em solid $grey-dark;
+  padding: $paragraph-spacing;
+  border-left: $paragraph-spacing solid $grey-dark;
   background-color: $red;
   color: $white;
+}
+
+// Forms
+
+label {
+  cursor: pointer;
+  &:hover {
+    color: $grey;
+  }
 }

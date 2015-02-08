@@ -10,26 +10,31 @@
     = csrf_meta_tags
 
   %body
-    %header.Header
+    %header.header
       .logo
         = link_to image_tag('slavapavlutin.svg'), root_path, alt: 'SlavaPavlutin'
         lava Pavlutin
+
       %nav
         %ul
           %li= link_to 'Home', root_path
           %li= link_to 'Posts', posts_path
           %li= link_to 'Projects', '#'
-          %li= link_to 'Contact', '#'
-          %li= link_to fa_icon('navicon', spinner: true), '#'
+          %li= link_to 'Contact', contact_path
 
+    %aside.nav
+      = breadcrumbs
 
-    %aside.Nav= content_for :nav
+      - if content_for? :settings
+        %ul.settings
+          = content_for :settings
+          %li= link_to fa_icon('navicon'), '#'
 
-    .Content
+    .content
       = yield
 
-    %footer.Footer
-      %h3 You can find me on:
+    %footer.footer
+      %h1 You can find me here
       %nav
         %ul
           %li= link_to fa_icon('twitter', text: 'Twitter'), '#'

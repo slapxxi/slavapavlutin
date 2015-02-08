@@ -18,9 +18,6 @@ Markdown
     expect(page).to have_content 'Hello!'
   end
 
-  scenario "viewing recent posts" do
-  end
-
   # In order to create posts, I create an extended markdown
   # document in posts and use a rake task to convert them
   # into database entries.
@@ -41,7 +38,7 @@ Markdown
     post = FactoryGirl.create :post, content: markdown_content
     visit post_path(post)
 
-    content = page.find('.Post .content')
+    content = page.find('.post-content')
 
     expect(content.find('h1')).to have_content 'Hello World'
     expect(content.find('p')).to have_content 'This is a paragraph.'

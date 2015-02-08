@@ -30,6 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# HTML replacement
 gem 'haml-rails'
 
 # Awesome iconic font & helpers
@@ -37,6 +38,9 @@ gem 'font-awesome-rails'
 
 # Use slugs instead of ids in URLs
 gem 'friendly_id'
+
+# Use breadcrumbs easily
+gem 'gretel'
 
 # Parse Markdown
 gem 'redcarpet'

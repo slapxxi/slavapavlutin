@@ -1,14 +1,9 @@
-= content_for :title, 'New Post'
+- content_for :title, 'New Post'
+- breadcrumb :new_post
+- content_for :settings do
+  %li= link_to fa_icon('caret-square-o-down', text: 'Import Markdown'), '#'
 
-- content_for :nav do
-  %ul.breadcrumbs
-    %li= link_to fa_icon('home'), root_path
-    %li= fa_icon 'angle-right'
-    %li= link_to 'Posts', posts_path
-    %li= fa_icon 'angle-right'
-    %li= link_to 'New Post', '#'
-
-.NewPost
+.post-new
   %h2 New Post
   = form_for @post do |f|
     %div

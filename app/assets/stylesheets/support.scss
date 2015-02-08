@@ -1,4 +1,4 @@
-// colors
+// Colors
 
 $black: #111;
 $white: #fff;
@@ -12,6 +12,18 @@ $red-light: #fd3c44;
 $grey: #bbb;
 $grey-light: #eee;
 $grey-dark: #333;
+
+// Fonts
+
+$base-font: "Myriad Pro", sans-serif;
+
+// Spacing
+
+$paragraph-spacing: 1.3em;
+$heading-spacing: 1.5em;
+$block-spacing: 2em;
+
+// Mixins
 
 @mixin container {
   padding: 1px 10%;

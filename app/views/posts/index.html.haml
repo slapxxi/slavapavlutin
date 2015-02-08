@@ -1,26 +1,22 @@
 - content_for :title, 'Posts'
+- breadcrumb :posts
 
-- content_for :nav do
-  %ul.settings
-    %li= link_to fa_icon('plus-circle', text: 'New post'), new_post_path
+- content_for :settings do
+  %li= link_to fa_icon('plus', text: 'New post'), new_post_path
 
-  %ul.breadcrumbs
-    %li= link_to fa_icon('home'), root_path
-    %li= fa_icon 'angle-right'
-    %li= link_to 'Posts', posts_path
+.posts
+  %h2.heading All Posts
 
-.Posts
-  %h2 All Posts
   %ul
     - @posts.reverse.each do |post|
-      %li.PostPreview
+      %li.post
         %header
-          = image_tag 'laptop.svg'
-          %h3= link_to post.title, post_path(post)
-          .meta
+          .post-img= image_tag 'laptop.svg'
+          %h3.post-title= link_to post.title, post_path(post)
+          .post-meta
             by
-            = post.author
-            %time= post.created_at.strftime "%d %B %Y"
-        %p= post.preview
+            = link_to post.author, '#', class: 'post-author'
+            %time.post-date= post.created_at.strftime "%d %B %Y"
+        %p.post-content= post.preview
         %footer= link_to 'Keep Reading', post_path(post), class: 'btn'
 
