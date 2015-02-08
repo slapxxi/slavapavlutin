@@ -1,7 +1,13 @@
 - content_for :title, 'Posts'
 
 - content_for :nav do
-  = link_to fa_icon('plus-circle', text: 'New Post'), new_post_path
+  %ul.settings
+    %li= link_to fa_icon('plus-circle', text: 'New post'), new_post_path
+
+  %ul.breadcrumbs
+    %li= link_to fa_icon('home'), root_path
+    %li= fa_icon 'angle-right'
+    %li= link_to 'Posts', posts_path
 
 .Posts
   %h2 All Posts

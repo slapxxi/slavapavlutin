@@ -52,13 +52,31 @@
 .Footer {
   @include container;
   clear: both;
-  color: $white;
+  color: $red-dark;
+  text-shadow: -1px 1px $red-light;
+  text-align: center;
 
   h1, h2, h3, h4, h5, h6, a {
+    color: $red-dark;
+  }
+
+  a:hover {
+    text-shadow: none;
     color: $white;
   }
 
+  ul {
+    @include reset-list;
+
+    li {
+      display: inline-block;
+      margin-right: 1em;
+      margin-bottom: 1em;
+    }
+  }
+
   small {
+    clear: both;
     display: block;
     text-align: center;
   }
@@ -89,11 +107,28 @@
 
 .Nav {
   @include container;
+  overflow: hidden;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
   text-align: right;
   font-size: 1.1em;
 
   a, .fa {
-    color: $white;
+    color: $red-dark;
+    text-shadow: -1px 1px $red-light;
+
+    &:hover, .active {
+      color: $white;
+      text-shadow: none;
+    }
+  }
+
+  .settings {
+    float: right;
+  }
+
+  .breadcrumbs {
+    float: left;
   }
 }
 
@@ -135,5 +170,33 @@
         color: $red;
       }
     }
+  }
+}
+
+.NewPost {
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  div {margin-top: 1em;}
+
+  input[type=text], textarea {
+    border: none;
+    border-bottom: 2px solid $grey;
+    outline: none;
+    color: $grey;
+    &:focus {
+      color: $grey-dark;
+    }
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    min-height: 400px;
+    height: auto;
   }
 }

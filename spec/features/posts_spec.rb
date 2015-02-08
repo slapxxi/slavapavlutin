@@ -48,6 +48,23 @@ Markdown
     expect(content.find('h2')).to have_content 'This is a header'
   end
 
-  scenario "deleting a post"
-  scenario "updating a post"
+  scenario "deleting a post" do
+    post = FactoryGirl.create :post, title: 'To be deleted'
+    visit post_path(post)
+    click_link 'Delete post'
+    visit posts_path
+
+    expect(page).not_to have_content 'To be deleted'
+  end
+
+  scenario "updating a post" do
+    post = FactoryGirl.create :post, title: 'To be updated'
+    visit post_path(post)
+    click_link 'Edit post'
+
+    fill_in 'post[title]', with: 'Updated post'
+    click_button 'Update Post'
+
+    expect(page).to have_content 'Updated post'
+  end
 end

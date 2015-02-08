@@ -16,3 +16,17 @@ a {
     color: $red-dark;
   }
 }
+
+blockquote {
+  font-family: Georgia;
+  font-style: italic;
+  color: $grey;
+}
+
+code {
+  display: inline-block;
+  padding: 1em;
+  border-left: 1em solid $grey-dark;
+  background-color: $red;
+  color: $white;
+}

@@ -2,20 +2,13 @@
   @include button($grey-dark, $red);
 }
 
-.breadcrumbs {
+.breadcrumbs, .settings {
   @include reset-list;
   overflow: hidden;
 
   li {
     float: left;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
     margin-right: 1em;
-
-    &:after {
-    }
-
-    &:last-child:after {
-    }
   }
 }
+

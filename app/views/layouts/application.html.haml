@@ -18,6 +18,8 @@
         %ul
           %li= link_to 'Home', root_path
           %li= link_to 'Posts', posts_path
+          %li= link_to 'Projects', '#'
+          %li= link_to 'Contact', '#'
           %li= link_to fa_icon('navicon', spinner: true), '#'
 
 
@@ -27,9 +29,10 @@
       = yield
 
     %footer.Footer
-      %h3 Find Me On
+      %h3 You can find me on:
       %nav
         %ul
           %li= link_to fa_icon('twitter', text: 'Twitter'), '#'
           %li= link_to fa_icon('github', text: 'Github'), '#'
+          %li= link_to fa_icon('dribbble', text: 'Dribbble'), '#'
       %small All rights reserved. 2015. Slava Pavlutin
