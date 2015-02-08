@@ -1,10 +1,12 @@
 body {
   font-family: $base-font;
   background-color: $red;
+  line-height: 2.2em;
   color: $grey-dark;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin: $heading-spacing auto;
   color: $black;
 }
 
@@ -32,7 +34,7 @@ blockquote {
 code {
   display: inline-block;
   padding: $paragraph-spacing;
-  border-left: $paragraph-spacing solid $grey-dark;
+  border-left: $paragraph-spacing - 0.8em solid $grey-dark;
   background-color: $red;
   color: $white;
 }

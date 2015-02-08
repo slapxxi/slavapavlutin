@@ -5,6 +5,7 @@
   %li= link_to 'Edit post', edit_post_path(@post)
   %li= link_to 'Delete post', post_path(@post), method: :delete, "data-confirm" => "Are you sure?"
 
+
 %article.post
   %header
     %h1.post-title= @post.title
@@ -14,7 +15,8 @@
       on
       %time= @post.created_at.strftime "%d %B %Y"
 
-  %section.post-content= from_markdown @post.content
+  %section.post-content
+    = from_markdown @post.content
 
   %footer
     = link_to 'Back to Posts', posts_path, class: 'btn'

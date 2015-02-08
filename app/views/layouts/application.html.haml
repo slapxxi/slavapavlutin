@@ -17,13 +17,14 @@
 
       %nav
         %ul
-          %li= link_to 'Home', root_path
-          %li= link_to 'Posts', posts_path
-          %li= link_to 'Projects', '#'
-          %li= link_to 'Contact', contact_path
+          %li= link_to 'Home', root_path, class: 'animated bounceInDown'
+          %li= link_to 'Posts', posts_path, class: 'animated bounceInDown'
+          %li= link_to 'Projects', '#', class: 'animated bounceInDown'
+          %li= link_to 'Contact', contact_path, class: 'animated bounceInDown'
 
-    %aside.nav
+    %aside.toolbar
       = breadcrumbs
+      = settings
 
       - if content_for? :settings
         %ul.settings
@@ -34,7 +35,7 @@
       = yield
 
     %footer.footer
-      %h1 You can find me here
+      %h1 You can also find me on
       %nav
         %ul
           %li= link_to fa_icon('twitter', text: 'Twitter'), '#'

@@ -11,11 +11,16 @@
   .post-img {
     float: right;
   }
+
+  .post-content {
+    margin-left: 0;
+    max-width: 900px;
+  }
 }
 
 .posts {
   ul { @include reset-list; }
-  li { margin: $block-spacing auto; }
+  li { margin: $block-spacing 0; }
 }
 
 .post-new {
