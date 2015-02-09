@@ -7,15 +7,21 @@
 
 
 %article.post
+  %aside.post-sidebar
+    %h2 Related Posts
+    - @post.related.each do |post|
+      %ul
+        %li= link_to post.title, post_path(post)
+
   %header
     %h1.post-title= @post.title
     .post-meta
       by
-      =link_to @post.author
+      =link_to @post.author, '#', class: 'post-author'
       on
       %time= @post.created_at.strftime "%d %B %Y"
 
-  %section.post-content
+  .post-content
     = from_markdown @post.content
 
   %footer

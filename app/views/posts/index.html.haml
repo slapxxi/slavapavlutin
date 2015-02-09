@@ -5,19 +5,21 @@
   %li= link_to fa_icon('plus', text: 'New post'), new_post_path
 
 .posts
-  %h2.heading All Posts
+  %h2.heading Recent Posts
 
   %ul
     - @posts.reverse.each do |post|
       %li.post
         %header
-          .post-img= image_tag 'laptop.svg'
           %h3.post-title= link_to post.title, post_path(post)
           .post-meta
+            = image_tag 'desktop.svg', class: 'post-img'
             by
             = link_to post.author, '#', class: 'post-author'
             %time.post-date= post.created_at.strftime "%d %B %Y"
 
-        %p.post-content= post.preview
+
+        %p.post-content= post.excerpt
+
         %footer= link_to 'Keep Reading', post_path(post), class: 'btn'
 

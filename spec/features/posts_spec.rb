@@ -11,6 +11,10 @@ This is a paragraph.
 Markdown
   end
 
+  before do
+    @post = FactoryGirl.create :post
+  end
+
   scenario "viewing posts" do
     FactoryGirl.create :post, title: 'Hello!'
     visit posts_path
@@ -30,8 +34,17 @@ Markdown
     click_button 'Create Post'
 
     expect(page.current_path).to eq '/posts/introduction-to-rails'
-    expect(page).to have_content 'Slava Pavlutin'
-    expect(page).to have_content 'Content'
+    expect(page.find('.post-author')).to have_content 'Slava Pavlutin'
+    expect(page.find('.post-content')).to have_content 'Content'
+  end
+
+  scenario "attempting to create a post with invalid attributes" do
+    visit new_post_path
+    fill_in 'post[title]', with: 'Something'
+    click_button 'Create Post'
+    visit posts_path
+
+    expect(page).not_to have_content 'Something'
   end
 
   scenario "creating a post with Markdown content" do

@@ -51,6 +51,7 @@ group :test do
 end
 
 group :development do
+  gem 'better_errors'
   gem 'pry-rails'
 
   gem 'html2haml', require: false

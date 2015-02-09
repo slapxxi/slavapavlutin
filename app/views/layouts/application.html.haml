@@ -21,15 +21,15 @@
           %li= link_to 'Posts', posts_path, class: 'animated bounceInDown'
           %li= link_to 'Projects', '#', class: 'animated bounceInDown'
           %li= link_to 'Contact', contact_path, class: 'animated bounceInDown'
+          %li= link_to  fa_icon('navicon'), '#', class: 'animated bounceInDown'
 
-    %aside.toolbar
+    %nav.toolbar
       = breadcrumbs
       = settings
 
       - if content_for? :settings
         %ul.settings
           = content_for :settings
-          %li= link_to fa_icon('navicon'), '#'
 
     .content
       = yield

@@ -8,7 +8,11 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
   validates :slug, presence: true
 
-  def preview
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis obcaecati mollitia dolorem voluptate nihil dolorum dignissimos laboriosam vitae vero provident unde fuga quasi pariatur molestias beatae, earum expedita voluptatem soluta."
+  def excerpt
+    content.split("\n").first
+  end
+
+  def related
+    self.class.all
   end
 end
